@@ -19,16 +19,23 @@ post '/stock' do
 end  
 
 get '/stock/:id' do
-  @album = Album.find(params[:id])
+  @albums = Album.find(params[:id])
   erb(:show)
 end
 
-post '/stock/:id' do
-  @album = Album.update(params)
-  redirect to ("/stock/#{params[:id]}")
-end
+
 
 post '/stock/:id/delete' do
-  @album = Album.delete(params[:id])
+  @albums = Album.delete(params[:id])
   redirect to ('/stock')
+end
+
+get '/stock/:id/edit' do
+  @albums = Album.find(params[:id])
+  erb (:edit)
+end
+
+post '/stock/:id' do
+  @albums = Album.update(params)
+  redirect to ("/stock/#{params[:id]}")
 end

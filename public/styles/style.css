@@ -4,9 +4,9 @@ body {
 }
 
 h1 {
-display: flex;
-justify-content: center;
-font-size: 60px;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
 }
 
 p {

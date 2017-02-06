@@ -22,10 +22,10 @@ class Album
   end
 
 
-  def update()
-    sql = "UPDATE album SET (title, genre, artist_id, quantity) = ('#{@title}', '#{@genre}', #{@artist_id}, #{@quantity}) WHERE id = #{@id};"
-    SqlRunner.run(sql)
-  end
+  # def update()
+  #   sql = "UPDATE album SET (title, genre, artist_id, quantity) = ('#{@title}', '#{@genre}', #{@artist_id}, #{@quantity}) WHERE id = #{@id};"
+  #   SqlRunner.run(sql)
+  # end
 
 
   # def delete()
@@ -45,7 +45,7 @@ class Album
   def self.find(id)
     sql = "SELECT * FROM album WHERE id=#{id};"
     albums = SqlRunner.run(sql)
-    result = Album.new(album.first)
+    result = Album.new(albums.first)
     return result
   end
 
@@ -57,25 +57,25 @@ class Album
 
 
   def self.update( options )
-    sql = "UPDATE album SET title= '#{options['title']}',
-    genre= '#{options['genre']}'
-    artist_id= #{options['artist_id']}
-    quantity= #{options['quantity']} WHERE id=#{options['id']}'"
+    sql = "UPDATE album SET title= '#{options['title']}', 
+    genre= '#{options['genre']}', 
+    artist_id= #{options['artist_id']}, 
+    quantity= #{options['quantity']} WHERE id=#{options['id']}"
     SqlRunner.run(sql)
   end
 
 
   def artist(artist_id)
     sql = "SELECT * FROM album WHERE id=#{artist_id};"
-    student = SqlRunner.run(sql)
+    albums = SqlRunner.run(sql)
   end
 
 
   def join
     sql = "SELECT * FROM artist art
-          INNER JOIN album alb
-          ON alb.artist_id = art.id
-          WHERE art.id = #{@artist_id}"
+    INNER JOIN album alb
+    ON alb.artist_id = art.id
+    WHERE art.id = #{@artist_id}"
     results = SqlRunner.run( sql )
     return Artist.new( results.first )
   end

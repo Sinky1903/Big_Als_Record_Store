@@ -5,10 +5,10 @@
 <hr />
 <% for album in @albums %>
 <p>Artist: <%= album.artist_id %>
-<p>Title: <%= album.title %></p>
-<p>Genre: <%= album.genre %></p>
-<p>Quantity: <%= album.quantity %></p>
-<p><a href="/stock/<%=album.id %>">Update</a></p>
-<p><a href="/stock/:id/delete<%=album.id %>">Delete</a></p>
-<hr />
-<% end %>
+  <p>Title: <%= album.title %></p>
+  <p>Genre: <%= album.genre %></p>
+  <p>Quantity: <%= album.quantity %></p>
+  <p><a href="/stock/<%=album.id %>">Update</a></p>
+  <!-- <p><a href="/stock/:id/delete<%=album.id %>">Delete</a></p> -->
+  <hr />
+  <% end %>
