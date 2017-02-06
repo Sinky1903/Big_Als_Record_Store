@@ -23,8 +23,6 @@ get '/stock/:id' do
   erb(:show)
 end
 
-
-
 post '/stock/:id/delete' do
   @albums = Album.delete(params[:id])
   redirect to ('/stock')

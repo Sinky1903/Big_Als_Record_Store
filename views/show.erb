@@ -6,6 +6,9 @@
     <p>Quantity: <%= @albums.quantity %></p>
     <p> <a href="/stock/<%= @albums.id %>/edit">Edit Entry</a></p>
 
+    <!-- <form action="/stock/<%= @albums.id%>/edit" method="post">
+      <input type="submit" value="edit"/> -->
+
     <form action="/stock/<%=@albums.id%>/delete" method="post">
       <input type="submit" value="delete"/>
 

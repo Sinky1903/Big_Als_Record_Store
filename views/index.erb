@@ -1,7 +1,6 @@
-<h1>Stock Inventory</h1>
+<h1>BIG AL'S STOCK</h1>
 
-<p>CCCHHHOOOOOOOONNNNSSSSS..!!!!</p>
-
+<p class="inventory">
 <hr />
 <% for album in @albums %>
 <p>Artist: <%= album.artist_id %>
@@ -9,6 +8,7 @@
   <p>Genre: <%= album.genre %></p>
   <p>Quantity: <%= album.quantity %></p>
   <p><a href="/stock/<%=album.id %>">Update</a></p>
+  
   <!-- <p><a href="/stock/:id/delete<%=album.id %>">Delete</a></p> -->
   <hr />
   <% end %>
