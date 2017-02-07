@@ -1,9 +1,9 @@
 body {
   background: black url('/images/Darkside.jpg');
-  background-size: 110%;
+  background-size: 100%;
   background-repeat: no-repeat;
   padding: 0px;
-  margin: 0px;
+  margin: 20px;
 }
 
 h1 {
@@ -22,13 +22,14 @@ p {
 }
 
 nav {
-  padding: 0px;
-  margin: 0px;
-  padding-right: 25px;
+  background: hotpink;
+  display: flex;
+  flex-direction: row;
+  width: 500px;  
 }
 
 main {
-  padding: 25px;
+  /*padding: 25px;*/
 }
 
 .add_entry {
@@ -43,12 +44,11 @@ main {
   justify-content: space-between;
   font-size: 20px;
   color: white;
-
 }
 
 .edit_entry_details {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   font-size: 20px;
   color: white;
 }
@@ -60,22 +60,22 @@ main {
  color: white;
 }
 
-.menus_left {
+/*.menus_left {
   display: flex;
   flex-direction: column;
-}
+}*/
 
-#content {
-  border-left: 1px solid red;
-  padding-left: 25px;
-}
+/*#content {
+  border-left: 4px solid red;
+  padding-left: 20px;
+}*/
 
 .update {
-  background-color: darkolivegreen;
+  background-color: #49D100;
 }
 
 .edit {
-  background-color: darkolivegreen;
+  background-color: #49D100;
 }
 
 .delete {
@@ -83,5 +83,14 @@ main {
 }
 
 .button {
+  border:0px none;
+  border-radius: 3%;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.button_box {
   margin: 0px 0px 30px 0px;
 }

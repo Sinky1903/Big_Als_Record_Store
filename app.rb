@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('./models/albums')
+require_relative('controllers/artists_controller')
 
 get '/stock' do
  @albums = Album.all

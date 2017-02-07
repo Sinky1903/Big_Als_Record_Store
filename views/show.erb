@@ -5,12 +5,13 @@
     <p>Genre: <%= @album.genre %></p>
     <p>Quantity: <%= @album.quantity %></p>
     <p>Price: £<%= @album.price %></p>
-    <p class="button"> 
-    <a class="edit" href="/stock/<%= @album.id %>/edit">Edit Entry</a>
+    <p class="button box"> 
+    <a class="button edit" href="/stock/<%= @album.id %>/edit">Edit Entry</a>
     </p>
 
 
     <form action="/stock/<%=@album.id%>/delete" method="post">
+    <p class="button box">
       <input class="delete" type="submit" value="delete"/>
 
     </div>

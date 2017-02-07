@@ -1,6 +1,14 @@
 <h1>Artists</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/artists/new">New Artist</a>
+<p class="inventory">
+<hr />
+<% for artist in @artists %>
+<p>Artist: <% artist.name %></p>
+
+<p class="button_box">
+<a class="button update" href="/artist/<%=artist.id %>">Update</a>
 </p>
+
+<hr />
+<% end %>
 

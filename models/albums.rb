@@ -50,38 +50,48 @@ class Album
     SqlRunner.run(sql)
   end
 
+  # def check_stock( quantity )
+  #   if album (quantity) < 4
+  #     return "LOW STOCK"
+  #   elsif 
+  #     album (quantity) < 8
+  #     return "MEDIUM STOCK"
+  #   else
+  #     return "HIGH STOCK"
+  #   end
 
-  def self.find(id)
-    sql = "SELECT * FROM album WHERE id=#{id};"
-    album = SqlRunner.run(sql)
-    result = Album.new(album.first)
-    return result
+
+    def self.find(id)
+      sql = "SELECT * FROM album WHERE id=#{id};"
+      album = SqlRunner.run(sql)
+      result = Album.new(album.first)
+      return result
+    end
+
+
+    def self.delete( id )
+      sql = "DELETE FROM album WHERE id=#{id};"
+      SqlRunner.run(sql)
+    end
+
+
+    def self.update( options )
+      sql = "UPDATE album SET title= '#{options['title']}', 
+      genre= '#{options['genre']}', 
+      artist_id= #{options['artist_id']}, 
+      quantity= #{options['quantity']}, price= #{options['price']} WHERE id=#{options['id']}"
+      SqlRunner.run(sql)
+    end
+
+
+    def artist()
+      sql = "SELECT * FROM artist WHERE id = #{@artist_id};"
+      artist = SqlRunner.run(sql)[0]
+      Artist.new( artist )
+    end
+
+
   end
-
-
-  def self.delete( id )
-    sql = "DELETE FROM album WHERE id=#{id};"
-    SqlRunner.run(sql)
-  end
-
-
-  def self.update( options )
-    sql = "UPDATE album SET title= '#{options['title']}', 
-    genre= '#{options['genre']}', 
-    artist_id= #{options['artist_id']}, 
-    quantity= #{options['quantity']}, price= #{options['price']} WHERE id=#{options['id']}"
-    SqlRunner.run(sql)
-  end
-
-
-  def artist()
-    sql = "SELECT * FROM artist WHERE id = #{@artist_id};"
-    artist = SqlRunner.run(sql)[0]
-    Artist.new( artist )
-  end
-
-
-end
 
 
 

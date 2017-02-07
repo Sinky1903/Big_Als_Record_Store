@@ -6,21 +6,27 @@
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
-<main class="menus_left">
+<main>
   <nav>
     <ul>
       <li>
-        <a href="/stock/new">New Entry</a>
+        <a href="/artist/new">New Artist Entry</a>
+      </li>
+      <li>
+        <a href="/artist">Artists</a>
+      </li>
+      <li>
+        <a href="/stock/new">New Album Entry</a>
       </li>
       <li>
         <a href="/stock">Stock</a>
       </li>
     </ul>
   </nav>
-<section id="content">
-  <%=yield %>
-  </section>
-  </main>
+    <section id="content">
+      <%=yield %>
+    </section>
+</main>
 </body>
 </html>
 
