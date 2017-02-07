@@ -1,14 +1,16 @@
 <h1>BIG AL'S STOCK</h1>
 
 <p class="inventory">
-<hr />
-<% for album in @albums %>
-<p>Artist: <%= album.artist_id %>
-  <p>Title: <%= album.title %></p>
-  <p>Genre: <%= album.genre %></p>
-  <p>Quantity: <%= album.quantity %></p>
-  <p><a href="/stock/<%=album.id %>">Update</a></p>
-  
-  <!-- <p><a href="/stock/:id/delete<%=album.id %>">Delete</a></p> -->
   <hr />
-  <% end %>
+  <% for album in @albums %>
+    <p>Artist: <%= album.artist.name %>
+    <p>Title: <%= album.title %></p>
+    <p>Genre: <%= album.genre %></p>
+    <p>Quantity: <%= album.quantity %></p>
+    <p>Price: £<%= album.price %></p>
+    <p class="button">
+    <a class="update" href="/stock/<%=album.id %>">Update</a>
+    </p>
+
+    <hr />
+    <% end %>

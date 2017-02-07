@@ -11,5 +11,6 @@ CREATE TABLE album(
   title VARCHAR(255) not null,
   genre VARCHAR(255) not null,
   artist_id INT4 references artist(id),
-  quantity INT2 not null
+  quantity INT2 not null,
+  price INT2 not null
 );

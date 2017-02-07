@@ -47,12 +47,17 @@ class Artist
 
   def self.find(id)
     sql = "SELECT * FROM artists WHERE id=#{id}"
-   artist = SqlRunner.run(sql)
-   result = Artist.new(artist.first)
-   return result
+    artist = SqlRunner.run(sql)
+    result = Artist.new(artist.first)
+    return result
   end
 
 
+  # def join()
+  #   sql = "SELECT art.name, alb.title, alb.genre, alb.quantity, alb.price FROM artist art INNER JOIN album alb ON art.id = alb.artist_id WHERE art.id = #{@id};"
+  #   results = SqlRunner.run(sql)
+  #   return Album.new (results.first)
+  # end
 
 end
 

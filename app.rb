@@ -13,27 +13,27 @@ get '/stock/new' do
 end
 
 post '/stock' do
-  @albums = Album.new(params)
-  @albums.save
+  @album = Album.new(params)
+  @album.save
   erb(:create)
 end  
 
 get '/stock/:id' do
-  @albums = Album.find(params[:id])
+  @album = Album.find(params[:id])
   erb(:show)
 end
 
 post '/stock/:id/delete' do
-  @albums = Album.delete(params[:id])
+  @album = Album.delete(params[:id])
   redirect to ('/stock')
 end
 
 get '/stock/:id/edit' do
-  @albums = Album.find(params[:id])
+  @album = Album.find(params[:id])
   erb (:edit)
 end
 
 post '/stock/:id' do
-  @albums = Album.update(params)
+  @album = Album.update(params)
   redirect to ("/stock/#{params[:id]}")
 end

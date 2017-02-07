@@ -2,8 +2,6 @@ body {
   background: black url('/images/Darkside.jpg');
   background-size: 110%;
   background-repeat: no-repeat;
-  /*color: papayawhip;*/
-  /*font-family: 'Merriweather', serif;*/
   padding: 0px;
   margin: 0px;
 }
@@ -42,9 +40,10 @@ main {
 
 .add_entry_details {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   font-size: 20px;
   color: white;
+
 }
 
 .edit_entry_details {
@@ -69,4 +68,20 @@ main {
 #content {
   border-left: 1px solid red;
   padding-left: 25px;
+}
+
+.update {
+  background-color: darkolivegreen;
+}
+
+.edit {
+  background-color: darkolivegreen;
+}
+
+.delete {
+  background-color: darkred;
+}
+
+.button {
+  margin: 0px 0px 30px 0px;
 }
