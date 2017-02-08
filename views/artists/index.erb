@@ -3,11 +3,8 @@
 <p class="inventory">
 <hr />
 <% for artist in @artists %>
-<p>Artist: <% artist.name %></p>
+<p>Artist: <%= artist.name %></p>
 
-<p class="button_box">
-<a class="button update" href="/artist/<%=artist.id %>">Update</a>
-</p>
 
 <hr />
 <% end %>

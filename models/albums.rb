@@ -38,7 +38,6 @@ class Album
 
   def self.all()
     sql = "SELECT * FROM album;"
-    # sql = "SELECT alb.*, art.name from album alb JOIN artist art ON alb.artist_id = art.id WHERE artist.id =#{@artist_id}"
     albums = SqlRunner.run(sql)
     result = albums.map { |album| Album.new(album)}
     return result
@@ -49,6 +48,7 @@ class Album
     sql = "DELETE FROM album;"
     SqlRunner.run(sql)
   end
+
 
   # def check_stock( quantity )
   #   if album (quantity) < 4
@@ -78,14 +78,14 @@ class Album
     def self.update( options )
       sql = "UPDATE album SET title= '#{options['title']}', 
       genre= '#{options['genre']}', 
-      artist_id= #{options['artist_id']}, 
+      artist_id = #{options['artist_id']}, 
       quantity= #{options['quantity']}, price= #{options['price']} WHERE id=#{options['id']}"
       SqlRunner.run(sql)
     end
 
 
     def artist()
-      sql = "SELECT * FROM artist WHERE id = #{@artist_id};"
+      sql = "SELECT * FROM artist WHERE id = #{@artist_id}"
       artist = SqlRunner.run(sql)[0]
       Artist.new( artist )
     end

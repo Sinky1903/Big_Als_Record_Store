@@ -9,11 +9,12 @@
 
 <label>Quantity: <input type="number" name="quantity"></label>
 
-<label> Artist: <select name="artist.name">
-<option value="1">Oasis</option>
-<option value="2">Blur</option>
-<option value="3">The Stone Roses</option>
-</select>
+<label>Artist:
+  <select name="artist_id">
+    <% for artist in @artists %>
+    <option value="<%= artist.id %>"><%= artist.name %></option>
+    <% end %>
+  </select>
 </label>
 
 <label>Price: <input type="number" name="price"></label>

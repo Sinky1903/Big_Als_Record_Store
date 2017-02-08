@@ -10,6 +10,7 @@ get '/stock' do
 end
 
 get '/stock/new' do
+  @artists = Artist.all
  erb(:new)
 end
 
